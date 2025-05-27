@@ -2,7 +2,8 @@ import {  motion } from "framer-motion"
 import Lottie from "lottie-react";
 import developerAnimation from '../animation/develpor.json'
 
-let str = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications, I have honed my skills in front-end technologies like Html , Css , Tailwind , JavaScript , TypeScript , React and Next.js, as well as back-end technologies like Node.js , Express.js and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+let str = `Full Stack Web Developer with a Bachelor of Engineering in Computer Science from BMS Institute of Technology and Management, Bangalore, India.
+I have hands-on experience in building modern applications using the MERN stack, through professional roles at SaaS Tech and TechnoHacks EduTech. I'm skilled in creating responsive React and Next.js interfaces, developing secure and scalable Node.js/Express.js APIs, and managing MongoDB databases. I'm passionate about writing clean, maintainable code, optimizing performance, and delivering complete end-to-end solutions that solve real-world problems.`;
 
 
 const grandVariants = {
@@ -37,23 +38,28 @@ const NestedFrom3renVariants = {
 
 function Hero() {
   return (
-    <div  className="border-b border-neutral-900 pb-4">
-    <div className="container mx-auto px-10 py-36  ">
-      <div className="flex flex-col gap-10 lg:flex-row lg:item-center">
+    <div id="home" className="border-b border-neutral-900/20 bg-gradient-to-b from-black via-neutral-900 to-neutral-950 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+    <div className="container mx-auto px-4 sm:px-6 lg:px-10 py-24 sm:py-32 lg:py-40">
+      <div className="flex flex-col gap-10 lg:flex-row lg:items-center justify-between">
         <motion.div   variants={grandVariants} initial="hidden" whileInView="visible"  className="text-white lg:w-1/2 ">
-          <motion.h2    variants= {Child1aAnd2dVariants} className="text-4xl text-neutral-300 pb-10 font-thin tracking-tight  ">Ammar Altamimi</motion.h2>
-          <motion.div   variants= {Child1aAnd2dVariants} className="text-2xl pb-3 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Full Stack develpoer
+          <motion.h2 variants={Child1aAnd2dVariants} className="text-5xl sm:text-6xl lg:text-7xl text-white pb-6 font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-neutral-400">Ammar Altamimi</motion.h2>
+          <motion.div variants={Child1aAnd2dVariants} className="text-2xl sm:text-3xl pb-6 font-semibold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent tracking-tight">
+            Full Stack Developer
           </motion.div>
-          <motion.p  variants={Child3Variants}  >
+          <motion.p variants={Child3Variants} className="text-neutral-300 text-lg leading-relaxed max-w-2xl">
             {str.split("").map((letter,index)=>(
-              <motion.span key={index} variants={NestedFrom3renVariants} >{letter}</motion.span>
+              <motion.span key={index} variants={NestedFrom3renVariants}>{letter}</motion.span>
             ))}
           </motion.p>
         </motion.div>
-        <div className=" flex justify-center items-center">
-        <Lottie className="w-[600px] m-w-full " animationData={developerAnimation} />
-        </div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }} 
+          whileInView={{ opacity: 1, scale: 1 }} 
+          transition={{ duration: 1 }} 
+          className="flex justify-center items-center lg:w-1/2">
+          <Lottie className="w-full max-w-[600px]" animationData={developerAnimation} />
+        </motion.div>
       
       </div>
     </div>
